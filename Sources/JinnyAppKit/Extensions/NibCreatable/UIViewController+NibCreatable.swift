@@ -1,7 +1,6 @@
 import UIKit
 
 extension UIViewController: NibCreatable {
-
     public final class var nib: UINib {
         let nibName = Self.nibName
         let nibBundle = Self.nibBundle
