@@ -1,5 +1,5 @@
 extension Optional {
-    var isNil: Bool {
+    public var isNil: Bool {
         switch self {
         case .some:
             return false
@@ -8,8 +8,13 @@ extension Optional {
         }
     }
 
-    var isNotNil: Bool {
+    public var isNotNil: Bool {
         return !isNil
     }
 }
 
+extension String {
+    public var hasElement: Bool {
+        return !self.isEmpty
+    }
+}
