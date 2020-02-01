@@ -1,6 +1,10 @@
 import XCTest
 @testable import JinnyAppKit
 
+class TestTableViewCell: UITableViewCell {
+    
+}
+
 class UITableViewCellIdentifierTest: XCTestCase {
     
     func test_클래스네임과_identifier가_같은지() {
