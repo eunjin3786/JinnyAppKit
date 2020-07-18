@@ -13,6 +13,14 @@ extension Date {
          return Calendar.current.component(.day, from: self)
     }
     
+    public var second: Int {
+        return Calendar.current.component(.second, from: self)
+    }
+    
+    public var nanoSecond: Int {
+        return Calendar.current.component(.nanosecond, from: self)
+    }
+    
     public var monthName: String {
         let nameFormatter = DateFormatter()
         nameFormatter.dateFormat = "MMMM" // format January, February, March, ...
