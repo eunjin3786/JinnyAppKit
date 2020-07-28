@@ -27,3 +27,23 @@ extension Date {
         return nameFormatter.string(from: self)
     }
 }
+
+extension DateFormatter {
+    public static let iso8601: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return dateFormatter
+    }()
+    
+    public static let standard: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        return dateFormatter
+    }()
+    
+    public static let day: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter
+    }()
+}
