@@ -1,7 +1,7 @@
 import Foundation
 
-extension Optional {
-    public var isNil: Bool {
+public extension Optional {
+    var isNil: Bool {
         switch self {
         case .some:
             return false
@@ -10,17 +10,17 @@ extension Optional {
         }
     }
 
-    public var isNotNil: Bool {
+    var isNotNil: Bool {
         return !isNil
     }
 }
 
-extension String {
-    public var hasElement: Bool {
+public extension String {
+    var hasElement: Bool {
         return !self.isEmpty
     }
     
-    public func matchingKeywords(regexPattern: String) -> [String] {
+    func matchingKeywords(regexPattern: String) -> [String] {
         if self.isEmpty {
             return []
         }
@@ -34,6 +34,29 @@ extension String {
             return keywords
         } catch {
             return []
+        }
+    }
+}
+
+public extension Array {
+    
+    var hasElement: Bool {
+        return !self.isEmpty
+    }
+    
+    mutating func popFirst() -> Element? {
+        return self[self.indices].popFirst()
+    }
+    
+    mutating func removeFirstIfExist() {
+        if self.hasElement {
+            self.removeFirst()
+        }
+    }
+    
+    mutating func removeLastIfExist() {
+        if self.hasElement {
+            self.removeLast()
         }
     }
 }
