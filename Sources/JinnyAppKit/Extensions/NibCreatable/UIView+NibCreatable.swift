@@ -1,7 +1,6 @@
 import UIKit
 
 // extensions 내의 override를 허용하려면 @objc 키워드 필요함.
-
 extension UIView: NibCreatable {
     public final class var nib: UINib {
         let nibName = Self.nibName
