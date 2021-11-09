@@ -1,6 +1,6 @@
 import UIKit
 
-public protocol StoryboardCreatable: class {
+public protocol StoryboardCreatable: AnyObject {
   static var storyboard: UIStoryboard { get }
   static var storyboardBundle: Bundle? { get }
   static var storyboardIdentifier: String { get }
