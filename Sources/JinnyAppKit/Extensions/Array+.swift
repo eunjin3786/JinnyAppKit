@@ -6,6 +6,10 @@ public extension Array {
         return !self.isEmpty
     }
     
+    subscript(safe index: Int) -> Element? {
+        return indices ~= index ? self[index] : nil
+    }
+    
     mutating func popFirst() -> Element? {
         return self[self.indices].popFirst()
     }
@@ -22,4 +26,3 @@ public extension Array {
         }
     }
 }
-

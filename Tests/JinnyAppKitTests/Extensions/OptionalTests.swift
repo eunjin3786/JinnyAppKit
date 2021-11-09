@@ -2,6 +2,7 @@ import XCTest
 @testable import JinnyAppKit
 
 class OptionalTests: XCTestCase {
+    
     func test_Optional_isNil() {
         // given
         let optionalValue: Int? = nil
