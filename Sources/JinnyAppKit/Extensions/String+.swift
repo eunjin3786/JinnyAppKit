@@ -1,6 +1,7 @@
 import Foundation
 
 public extension String {
+    
     var hasElement: Bool {
         return !self.isEmpty
     }
@@ -19,6 +20,36 @@ public extension String {
             return keywords
         } catch {
             return []
+        }
+    }
+    
+    subscript(i: Int) -> String {
+        get {
+            let index = index(startIndex, offsetBy: i)
+            return String(self[index])
+        }
+        set {
+            let index = index(startIndex, offsetBy: i)
+            remove(at: index)
+            insert(Character(newValue), at: index)
+        }
+    }
+    
+    subscript(safe i: Int) -> String? {
+        get {
+            let index = index(startIndex, offsetBy: i)
+            if startIndex...endIndex ~= index {
+                return String(self[index])
+            } else {
+                return nil
+            }
+        }
+        set {
+            let index = index(startIndex, offsetBy: i)
+            if startIndex...endIndex ~= index, let newValue {
+                remove(at: index)
+                insert(Character(newValue), at: index)
+            }
         }
     }
 }
